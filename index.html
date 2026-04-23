@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript RPG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">JavaScript RPG</div>
+          <div class="brand__subtitle">A DOM-driven fantasy adventure</div>
+        </div>
+
+        <div class="topbar__actions">
+          <button id="btnSave" class="btn btn--ghost" type="button">Save</button>
+          <button id="btnLoad" class="btn btn--ghost" type="button">Load</button>
+          <button id="btnNew" class="btn btn--danger" type="button">New Game</button>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel panel--story" aria-label="Narrative">
+          <div class="panel__header">
+            <div class="panel__title">Narrative</div>
+            <div id="sceneTag" class="tag" aria-live="polite">Loading...</div>
+          </div>
+          <div id="storyText" class="story" aria-live="polite"></div>
+          <div id="actionButtons" class="actions" aria-label="Choices"></div>
+        </section>
+
+        <section class="panel panel--visual" aria-label="Visuals">
+          <div class="panel__header">
+            <div class="panel__title">Battle Board</div>
+            <div id="battleTag" class="tag tag--muted">Canvas</div>
+          </div>
+
+          <canvas id="battleCanvas" width="520" height="170" aria-label="Health bars"></canvas>
+
+          <div class="imageFrame" aria-label="Scene Image">
+            <img id="sceneImage" alt="Scene" />
+          </div>
+        </section>
+
+        <aside class="panel panel--sidebar" aria-label="Player Status">
+          <div class="panel__header">
+            <div class="panel__title">Adventurer</div>
+            <div id="classTag" class="tag tag--muted">—</div>
+          </div>
+
+          <div class="stats">
+            <div class="statRow">
+              <div class="statRow__label">Name</div>
+              <div id="statName" class="statRow__value">—</div>
+            </div>
+            <div class="statRow">
+              <div class="statRow__label">Level</div>
+              <div id="statLevel" class="statRow__value">—</div>
+            </div>
+            <div class="statRow">
+              <div class="statRow__label">Health</div>
+              <div id="statHealth" class="statRow__value">—</div>
+            </div>
+            <div class="statRow">
+              <div class="statRow__label">Attack</div>
+              <div id="statAttack" class="statRow__value">—</div>
+            </div>
+            <div class="statRow">
+              <div class="statRow__label">Defense</div>
+              <div id="statDefense" class="statRow__value">—</div>
+            </div>
+            <div class="statRow">
+              <div class="statRow__label">Gold</div>
+              <div id="statGold" class="statRow__value">—</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="subhead">Equipment</div>
+          <div class="equip">
+            <div class="equip__row">
+              <div class="equip__label">Weapon</div>
+              <div id="equipWeapon" class="equip__value">—</div>
+            </div>
+            <div class="equip__row">
+              <div class="equip__label">Armor</div>
+              <div id="equipArmor" class="equip__value">—</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="subhead">Inventory</div>
+          <div id="inventoryList" class="inventory" aria-label="Inventory List"></div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__hint">
+          Tip: Use the buttons above to make choices. Gameplay never uses <code>prompt()</code> or the console.
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
